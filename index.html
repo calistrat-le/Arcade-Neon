@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcade Neon - Jogos Divertidos</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts para um visual moderno -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="hero">
+        <h1>🎮 Arcade Neon</h1>
+        <p>Escolha seu jogo favorito e divirta-se!</p>
+    </header>
+
+    <main class="container">
+        <!-- Seletor de Jogos -->
+        <section class="game-selector" id="gameSelector">
+            <div class="game-card" onclick="switchGame('tictactoe')">
+                <div class="card-icon">❌⭕</div>
+                <h3>Jogo da Velha</h3>
+                <p>O clássico desafio da velha guarda em estilo neon.</p>
+            </div>
+            <div class="game-card" onclick="switchGame('memory')">
+                <div class="card-icon">🧠✨</div>
+                <h3>Jogo da Memória</h3>
+                <p>Teste sua memória combinando os emojis corretos.</p>
+            </div>
+        </section>
+
+        <!-- Área dos Jogos (Incialmente Ocultas) -->
+        <div class="game-container">
+            <button class="back-btn" id="backBtn" onclick="returnToMenu()" style="display: none;">⬅ Voltar aos Jogos</button>
+
+            <!-- Jogo da Velha -->
+            <div id="tictactoe" class="game-box" style="display: none;">
+                <h2>Jogo da Velha</h2>
+                <div class="ttt-status" id="tttStatus">Vez do Jogador X</div>
+                <div class="ttt-board" id="tttBoard">
+                    <div class="ttt-cell" onclick="makeMove(0)"></div>
+                    <div class="ttt-cell" onclick="makeMove(1)"></div>
+                    <div class="ttt-cell" onclick="makeMove(2)"></div>
+                    <div class="ttt-cell" onclick="makeMove(3)"></div>
+                    <div class="ttt-cell" onclick="makeMove(4)"></div>
+                    <div class="ttt-cell" onclick="makeMove(5)"></div>
+                    <div class="ttt-cell" onclick="makeMove(6)"></div>
+                    <div class="ttt-cell" onclick="makeMove(7)"></div>
+                    <div class="ttt-cell" onclick="makeMove(8)"></div>
+                </div>
+                <button class="action-btn" onclick="resetTTT()">Reiniciar Partida</button>
+            </div>
+
+            <!-- Jogo da Memória -->
+            <div id="memory" class="game-box" style="display: none;">
+                <h2>Jogo da Memória</h2>
+                <div class="memory-grid" id="memoryGrid"></div>
+                <button class="action-btn" onclick="resetMemory()">Embaralhar / Reiniciar</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Desenvolvido com carinho 💖 | Pronto para o GitHub Pages</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
