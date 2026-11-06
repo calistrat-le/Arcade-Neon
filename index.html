@@ -1,70 +1,99 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arcade Neon - Jogos Divertidos</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts para um visual moderno -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Wizarding Arcade</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-    <header class="hero">
-        <h1>🎮 Arcade Neon</h1>
-        <p>Escolha seu jogo favorito e divirta-se!</p>
-    </header>
+<header class="header">
+    <a href="#" class="logo">
+        <span class="logo-symbol">⚯</span>
+        <span>THE WIZARDING<br><b>ARCADE</b></span>
+    </a>
 
-    <main class="container">
-        <!-- Seletor de Jogos -->
-        <section class="game-selector" id="gameSelector">
-            <div class="game-card" onclick="switchGame('tictactoe')">
-                <div class="card-icon">❌⭕</div>
-                <h3>Jogo da Velha</h3>
-                <p>O clássico desafio da velha guarda em estilo neon.</p>
-            </div>
-            <div class="game-card" onclick="switchGame('memory')">
-                <div class="card-icon">🧠✨</div>
-                <h3>Jogo da Memória</h3>
-                <p>Teste sua memória combinando os emojis corretos.</p>
-            </div>
-        </section>
+    <nav>
+        <a href="#home">INÍCIO</a>
+        <a href="#games">JOGOS</a>
+        <a href="#about">SOBRE</a>
+    </nav>
 
-        <!-- Área dos Jogos (Incialmente Ocultas) -->
-        <div class="game-container">
-            <button class="back-btn" id="backBtn" onclick="returnToMenu()" style="display: none;">⬅ Voltar aos Jogos</button>
+    <div class="points">✦ <span id="points">0</span> galeões</div>
+</header>
 
-            <!-- Jogo da Velha -->
-            <div id="tictactoe" class="game-box" style="display: none;">
-                <h2>Jogo da Velha</h2>
-                <div class="ttt-status" id="tttStatus">Vez do Jogador X</div>
-                <div class="ttt-board" id="tttBoard">
-                    <div class="ttt-cell" onclick="makeMove(0)"></div>
-                    <div class="ttt-cell" onclick="makeMove(1)"></div>
-                    <div class="ttt-cell" onclick="makeMove(2)"></div>
-                    <div class="ttt-cell" onclick="makeMove(3)"></div>
-                    <div class="ttt-cell" onclick="makeMove(4)"></div>
-                    <div class="ttt-cell" onclick="makeMove(5)"></div>
-                    <div class="ttt-cell" onclick="makeMove(6)"></div>
-                    <div class="ttt-cell" onclick="makeMove(7)"></div>
-                    <div class="ttt-cell" onclick="makeMove(8)"></div>
-                </div>
-                <button class="action-btn" onclick="resetTTT()">Reiniciar Partida</button>
-            </div>
+<section class="hero" id="home">
 
-            <!-- Jogo da Memória -->
-            <div id="memory" class="game-box" style="display: none;">
-                <h2>Jogo da Memória</h2>
-                <div class="memory-grid" id="memoryGrid"></div>
-                <button class="action-btn" onclick="resetMemory()">Embaralhar / Reiniciar</button>
-            </div>
-        </div>
-    </main>
+    <div class="hero-content">
+        <p class="small-title">✧ BEM-VINDO AO MUNDO DA MAGIA ✧</p>
 
-    <footer>
-        <p>Desenvolvido com carinho 💖 | Pronto para o GitHub Pages</p>
-    </footer>
+        <h1>THE WIZARDING<br><span>ARCADE</span></h1>
 
-    <script src="script.js"></script>
+        <div class="ornament">━━━━━━ ✦ ━━━━━━</div>
+
+        <p class="hero-description">
+            Entre, jovem bruxo. Sua próxima aventura está
+            escondida entre estas páginas.
+        </p>
+
+        <a href="#games" class="main-button">
+            ENTRAR NO SALÃO DE JOGOS
+        </a>
+
+        <p class="quote">"A magia começa quando você aceita o desafio."</p>
+    </div>
+
+    <div class="floating-candle">🕯️</div>
+</section>
+
+<section class="intro">
+    <p class="small-title">ESCOLA DE MAGIA E BRUXARIA</p>
+    <h2>O SALÃO DOS DESAFIOS</h2>
+    <div class="ornament">✧ ━━━━━━━━━ ✧</div>
+    <p>
+        Quinze desafios foram preparados para testar sua inteligência,
+        memória, coragem e habilidade.
+    </p>
+</section>
+
+<section class="games-section" id="games">
+
+    <div class="section-title">
+        <h2>✦ ESCOLHA SEU DESAFIO ✦</h2>
+        <p>Selecione um dos jogos disponíveis no salão.</p>
+    </div>
+
+    <div class="game-grid" id="gameGrid"></div>
+
+</section>
+
+<section class="about" id="about">
+    <div class="ornament">✧ ━━━━━━━━━ ✧</div>
+    <h2>UM MUNDO DE POSSIBILIDADES</h2>
+    <p>
+        Explore os desafios, acumule galeões e prove que você
+        possui o espírito de um verdadeiro bruxo.
+    </p>
+    <div class="about-symbol">⚯</div>
+</section>
+
+<footer>
+    <p>THE WIZARDING ARCADE</p>
+    <small>Um pequeno universo de magia e diversão.</small>
+</footer>
+
+<div class="modal" id="modal">
+    <div class="modal-box">
+        <button class="close" onclick="closeGame()">✕</button>
+        <p class="small-title">✧ DESAFIO MÁGICO ✧</p>
+        <h2 id="gameTitle"></h2>
+        <div id="gameArea"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
